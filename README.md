@@ -75,7 +75,7 @@ it is considered a best practice to perform state updates like this:
 
 ```
 const [machin, setMachin] = useState(null);
-function myUpdateMachin(newvalue){
+function myUpdateMachin(newMachin){
     setMachin((prevMachin) => newMachin);
 }
 ```
@@ -91,3 +91,5 @@ And you will always get the right value here.
 ## Optimizing React with MillionJS
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/40270610#notes
+
+https://million.dev/
