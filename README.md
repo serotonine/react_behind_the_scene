@@ -41,9 +41,24 @@ Once again when a function is executed it is in fact recreated (another JS refer
 So useCallBack() prevents a function to be recreated.
 
 - ### useMemo()
+
   Same than memo() but for **normal functions**
   Should only used for complex calculations functions.
+
   ```
   const initialCountIsPrime = useMemo(() => isPrime(initialCount), [initialCount]);
   ```
+
   **Don't overuse useMemo()**
+
+  ## Virtual DOM
+
+  https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/40270578#notes
+
+  React checks for necessary DOM updates via a Virtual DOM.
+
+It creates & compares virtual DOM snapshots to find out which parts of the rendered UI needs to be updated.
+All components are reusible = > each component has its own isolated state
+**But** React tracks state by component's type & position in the tree.
+it's why the **key** is necessary. **Don't use index!!** in a map.
+Keys are needed in list but not only: In order to re-execute a component, you add a key with a value changing.
