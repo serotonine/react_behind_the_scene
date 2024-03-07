@@ -36,3 +36,6 @@ Child component execution does not trigger parent execution.
 So the best is to gather all logic bounds to this component in it.
 
 ### useCallBack()
+
+Once again when a function is executed it is in fact recreated (another JS reference).
+So useCallBack() prevents a function to be recreated.
