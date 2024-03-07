@@ -21,16 +21,18 @@ const Counter = memo(function Counter({...props}){
 export default Counter;
 ```
 
-**_ Don't overuse memo()_**
-Use it **_ as high up in the component tree _** as possible.
+**Don't overuse memo()**
+Use it **as high up in the component tree** as possible.
 Because:
 
 - if a component is prevented from execution all its child will not be executed either.
-- Checking props with memo() **_ cost performance _**
+- Checking props with memo() **cost performance**
 - Dont use memo() on components which props change frequently.
 
 ### A clever component composition.
 
 https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/40270540#notes
 Child component execution does not trigger parent execution.
-So the best is to gather all logic bounds to a component in this component.
+So the best is to gather all logic bounds to this component in it.
+
+### useCallBack()
