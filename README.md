@@ -62,3 +62,32 @@ All components are reusible = > each component has its own isolated state
 **But** React tracks state by component's type & position in the tree.
 it's why the **key** is necessary. **Don't use index!!** in a map.
 Keys are needed in list but not only: In order to re-execute a component, you add a key with a value changing.
+
+## State Scheduling & Batching
+
+When you call a state updating function (useState() => setMyState()),
+the state update will not be executed instantly.
+Instead, this will trigger a new component function execution
+and the new state will be available afterwards
+
+But because those state updates are scheduled
+it is considered a best practice to perform state updates like this:
+
+```
+const [machin, setMachin] = useState(null);
+function myUpdateMachin(newvalue){
+    setMachin((prevMachin) => newMachin);
+}
+```
+
+Because when using this approach here,
+React guarantees you that here
+you will always get the latest state snapshot available
+and if multiple state updates of the same time
+should be scheduled, they will be executed
+in the order in which they were scheduled.
+And you will always get the right value here.
+
+## Optimizing React with MillionJS
+
+https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/40270610#notes
